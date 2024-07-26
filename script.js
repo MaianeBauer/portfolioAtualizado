@@ -1,12 +1,9 @@
 console.log("Largura da tela: ", window.innerWidth);
 console.log("É móvel? ", isMobile());
 
-
-
-
 // Função para verificar se o dispositivo é móvel
 function isMobile() {
-  return window.innerWidth < 768; // Ajuste conforme necessário
+  return window.innerWidth < 768; // Ajuste do tamanho da tela
 }
 
 // Inicialize o menu
@@ -54,156 +51,41 @@ if (!isMobile()) {
 if (!isMobile()) {
   window.revelar = ScrollReveal({ reset: true });
   
-  window.revelar.reveal(".efeito-img-topo", {
+  // Revela os elementos com ScrollReveal
+  const elementos = [
+    ".efeito-img-topo", ".efeito-education", ".efeito-services", ".efeito-project",
+    ".efeitoprojeto1", ".efeitoprojeto2", ".efeitoprojeto3",
+    ".efeito-arvore1", ".efeito-arvore2", ".efeito-arvore3",
+    ".efeito-arvore4", ".efeito-arvore5", ".efeito-arvore6", ".efeito-arvore7",
+    ".efeito-serv1", ".efeito-serv2", ".efeito-serv3", ".efeito-serv4",
+    ".efeitocontato"
+  ];
+
+  elementos.forEach(selector => {
+    window.revelar.reveal(selector, {
       duration: 2000,
       distance: "90px",
       delay: 50,
-  });
-  
-  window.revelar.reveal(".efeito-education", {
-      duration: 2000,
-      distance: "90px",
-  });
-  
-  window.revelar.reveal(".efeito-services", {
-      duration: 2000,
-      distance: "90px",
-  });
-  
-  window.revelar.reveal(".efeito-project", {
-      duration: 2000,
-      distance: "90px",
-  });
-
-  window.revelar.reveal(".efeitoprojeto1", {
-      duration: 1000,
-      distance: "900px",
-      delay: 500,
-      scale: 1,
-      origin: "left",
-  });
-
-  window.revelar.reveal(".efeitoprojeto2", {
-      duration: 1000,
-      distance: "900px",
-      delay: 500,
-      scale: 3,
-      origin: "left",
-  });
-
-  window.revelar.reveal(".efeitoprojeto3", {
-      duration: 1000,
-      distance: "900px",
-      delay: 500,
-      scale: 1,
-      origin: "left",
-  });
-
-  window.revelar.reveal(".efeito-arvore1", {
-      duration: 1000,
-      distance: "900px",
-      delay: 500,
-      origin: "left",
-  });
-
-  window.revelar.reveal(".efeito-arvore2", {
-      duration: 1000,
-      distance: "900px",
-      delay: 800,
-      origin: "right",
-  });
-
-  window.revelar.reveal(".efeito-arvore3", {
-      duration: 1000,
-      distance: "900px",
-      delay: 1000,
-      origin: "left",
-  });
-
-  window.revelar.reveal(".efeito-arvore4", {
-      duration: 1000,
-      distance: "900px",
-      delay: 1000,
-      origin: "right",
-  });
-
-  window.revelar.reveal(".efeito-arvore5", {
-      duration: 1000,
-      distance: "900px",
-      delay: 1000,
-      origin: "left",
-  });
-
-  window.revelar.reveal(".efeito-arvore6", {
-      duration: 1000,
-      distance: "900px",
-      delay: 1000,
-      origin: "right",
-  });
-
-  window.revelar.reveal(".efeito-arvore7", {
-      duration: 2000,
-      distance: "900px",
-      delay: 1500,
-      origin: "left",
-  });
-
-  window.revelar.reveal(".efeito-serv1", {
-      duration: 2000,
-      distance: "90px",
-      delay: 500,
-      origin: "top",
-      rotate: {
-          x: 50,
-          z: 20,
-      },
-  });
-
-  window.revelar.reveal(".efeito-serv2", {
-      duration: 2000,
-      distance: "90px",
-      delay: 500,
-      origin: "bottom",
-      rotate: {
-          x: 30,
-          z: 20,
-      },
-  });
-
-  window.revelar.reveal(".efeito-serv3", {
-      duration: 2000,
-      distance: "90px",
-      delay: 500,
-      origin: "bottom",
-      rotate: {
-          x: 25,
-          z: 35,
-      },
-  });
-
-  window.revelar.reveal(".efeito-serv4", {
-      duration: 2000,
-      distance: "90px",
-      delay: 500,
-      origin: "top",
-      rotate: {
-          x: 20,
-          z: 30,
-      },
-  });
-
-  ScrollReveal().reveal(".efeitocontato", {
-      distance: "1000px",
-      opacity: 15.8,
-      easing: "cubic-bezier(0.5, 0, 0, 1)",
+     
+    });
   });
 }
 
-// Adicionar um ouvinte de evento para o redimensionamento da janela para lidar com mudanças de tamanho
+// Adiciona um ouvinte de evento para o redimensionamento da janela
 window.addEventListener('resize', () => {
   if (isMobile()) {
       // Reinitialize or adjust animations for mobile if needed
-      particlesJS("particles-container", {}); // Se necessário, ajuste a configuração para mobile
+      particlesJS("particles-container", {});
       ScrollReveal().destroy(); // Destruir instâncias existentes se necessário
+
+      // Ajuste da visibilidade dos elementos para mobile
+      document.querySelectorAll('.efeito-img-topo, .efeito-education, .efeito-services, .efeito-project, .efeitoprojeto1, .efeitoprojeto2, .efeitoprojeto3, .efeito-arvore1, .efeito-arvore2, .efeito-arvore3, .efeito-arvore4, .efeito-arvore5, .efeito-arvore6, .efeito-arvore7, .efeito-serv1, .efeito-serv2, .efeito-serv3, .efeito-serv4, .efeitocontato').forEach(el => {
+          el.style.visibility = 'visible'; // Garante que os elementos sejam visíveis
+      });
+  } else {
+      // Caso contrário, aplique a visibilidade oculta
+      document.querySelectorAll('.efeito-img-topo, .efeito-education, .efeito-services, .efeito-project, .efeitoprojeto1, .efeitoprojeto2, .efeitoprojeto3, .efeito-arvore1, .efeito-arvore2, .efeito-arvore3, .efeito-arvore4, .efeito-arvore5, .efeito-arvore6, .efeito-arvore7, .efeito-serv1, .efeito-serv2, .efeito-serv3, .efeito-serv4, .efeitocontato').forEach(el => {
+          el.style.visibility = 'hidden'; // Esconde os elementos para animações
+      });
   }
 });
