@@ -838,15 +838,6 @@ input.bnt:hover{
 /* Responsividade */
 
 @media(max-width: 1285px) {
-  *{
-    animation: none;
-  } 
-  #particles-js {
-    visibility: hidden;
-  }
-  animate{
-    visibility: hidden;
-  }
   html {
     font-size: 55%;
   }
@@ -864,16 +855,6 @@ input.bnt:hover{
             margin: auto;}
 } */
 @media (max-width: 991px) {
-  *{
-    animation: none;
-  }
-  #particles-js {
-    visibility: hidden;
-  }
-  animate{
-    visibility: hidden;
-  }
-  
   header {
     padding: 2rem 3%;
   }
@@ -924,15 +905,6 @@ input.bnt:hover{
   }
 }
 @media (max-width:895px) {
-  *{
-    animation: none;
-  }
-  #particles-js {
-    visibility: hidden;
-  }
-  animate{
-    visibility: hidden;
-  }
   #menu-icon {
     display: block;
   }
@@ -1128,6 +1100,10 @@ ol {
   }
 }  
  */
+
+
+
+
 
 .efeito-img-topo , .efeito-education , .efeito-services , .efeito-project, .efeitoprojeto1 , .efeitoprojeto2 , .efeitoprojeto3 , .efeito-arvore1 , .efeito-arvore2 , .efeito-arvore3 , .efeito-arvore4 , .efeito-arvore5 , .efeito-arvore6 , .efeito-arvore7 , .efeito-serv1 , .efeito-serv2 , .efeito-serv3 , .efeito-serv4 , .efeitocontato{
     visibility: hidden;
